@@ -38,3 +38,6 @@ playwright-report/
 
 .env.prod
 .env.dev
+
+server.key
+server.cert

@@ -37,12 +37,9 @@ const {
   getCsrfTokenFromRequest: (req) => req.body?._csrf ?? req.headers['x-csrf-token'],
 });
 
-// const privateKey = fs.readFileSync(path.join(__dirname, 'ssl', 'key.pem'), 'utf8');
-// const certificate = fs.readFileSync(path.join(__dirname, 'ssl', 'cert.pem'), 'utf8');
+// const privateKey = fs.readFileSync('server.key', 'utf8');
+// const certificate = fs.readFileSync('server.cert', 'utf8');
 // const credentials = { key: privateKey, cert: certificate, passphrase: process.env.SSL_PASSPHRASE };
-const privateKey = fs.readFileSync('server.key', 'utf8');
-const certificate = fs.readFileSync('server.cert', 'utf8');
-const credentials = { key: privateKey, cert: certificate, passphrase: process.env.SSL_PASSPHRASE };
 
 const fileStorage = multer.diskStorage({
   destination: (req, file, cb) => {
