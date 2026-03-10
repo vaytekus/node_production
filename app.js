@@ -69,7 +69,7 @@ const shopRoutes = require('./routes/shop');
 const authRoutes = require('./routes/auth');
 
 const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' }) || process.stdout;
-
+const cspDefaults = helmet.contentSecurityPolicy.getDefaultDirectives();
 // app.use(helmet());
 app.use(
   helmet({
